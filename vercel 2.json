@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/share.js": {
+      "includeFiles": "index.html"
+    }
+  },
+  "routes": [
+    {
+      "src": "^/$",
+      "dest": "/api/share"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/index.html"
+    }
+  ]
+}
